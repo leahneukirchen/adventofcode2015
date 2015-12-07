@@ -8,9 +8,9 @@ l:ss[;" "]' d;
 
 f:1000 1000 # 0;
 
-on:    {f[rg[x[0];x[2]];rg[x[1];x[3]]]:1};
-off:   {f[rg[x[0];x[2]];rg[x[1];x[3]]]:0};
-toggle:{f[rg[x[0];x[2]];rg[x[1];x[3]]]~:};
+on:    {f[rg . x 0 2; rg . x 1 3]:1};
+off:   {f[rg . x 0 2; rg . x 1 3]:0};
+toggle:{f[rg . x 0 2; rg . x 1 3]~:};
 
 op:{
  :["on"~x[1];on[,/ds'x[2 4]]
@@ -26,10 +26,10 @@ op' l;
 
 f:1000 1000 # 0;
 
-on:    {f[rg[x[0];x[2]];rg[x[1];x[3]]]+:1};
-off:   {f[rg[x[0];x[2]];rg[x[1];x[3]]]-:1
-        f[rg[x[0];x[2]];rg[x[1];x[3]]]|:0};
-toggle:{f[rg[x[0];x[2]];rg[x[1];x[3]]]+:2};
+on:    {f[rg . x 0 2; rg . x 1 3]+:1};
+off:   {f[rg . x 0 2; rg . x 1 3]-:1
+        f[rg . x 0 2; rg . x 1 3]|:0};
+toggle:{f[rg . x 0 2; rg . x 1 3]+:2};
 
 op' l;
 
